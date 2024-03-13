@@ -20,7 +20,7 @@ add : async function (req, res) {
     }
   },
 
-  put : async function (req, res) {
+ search : async function (req, res) {
     try {
       const cars = await Car.find({type:req.body.type});
       res.status(200).send(cars);
@@ -29,6 +29,16 @@ add : async function (req, res) {
       res.status(400).send(error);
     }
   },
+
+delete :async function (req, res) {
+  try {
+    const car = await Car.deleteOne({id:req.params.id});
+    res.status(200).send(car);
+  } 
+  catch (error) {
+    res.status(400).send(error);
+  }
+},
 
 
 }

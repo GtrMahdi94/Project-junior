@@ -7,7 +7,7 @@ export default function AddNewCar(props) {
     year: "",
     kilometre:0,
     price: 0,
-    imgurl: "",
+    imgUrl: "",
     contact:0,
     description:""
   });

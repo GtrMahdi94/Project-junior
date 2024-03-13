@@ -16,9 +16,9 @@ const ListCar = (props) => (
           <li className="list-group-item d-flex justify-content-between"><strong>Year:</strong> {moment(props.car.year).format('DD/MM/YYYY')}</li>
         </ul>
         <div className="card-footer bg-transparent border-top-0 d-flex justify-content-between align-items-center" style={styles.cardFooter}>
-          <a href="#" className="card-link">More Details</a>
+          {/* <a href="#" className="card-link">More Details</a> */}
           <a href="#" className="card-link">{props.car.contact}</a>
-          <button type="button" class="btn btn-outline-danger" onClick={()=>deleteCar()}>Delete</button>
+          <button type="button" class="btn btn-outline-danger" onClick={() => props.deletecar(props.car._id)}>Delete</button>
         </div>
       </div>
     </div>
