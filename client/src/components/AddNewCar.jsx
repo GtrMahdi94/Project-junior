@@ -1,4 +1,4 @@
-import {React,useState} from 'react'
+import React,{useState} from 'react'
 
 export default function AddNewCar(props) {
   const [car, setCar] = useState({
@@ -14,18 +14,17 @@ export default function AddNewCar(props) {
 
   const addnew = () => {
     console.log(car);
-    props.AddNewCar(car);
+    props.addNewCar(car);
   };
 
   const handleInputChange = (e) => {
-    const { type, Model,year,kilometre,price,imgurl,contact,description } = e.target;
+    const { name , value } = e.target
+
     setCar((car) => ({
       ...car,
-      [type]: value,
+      [name]: value,
     }));
   };
-
-  
   return (
     <>
    
@@ -55,11 +54,11 @@ export default function AddNewCar(props) {
             <label for="recipient-name" className="col-form-label">Contact:</label>
             <input type="number" className="form-control" id="contact" name="contact" onChange={handleInputChange}/>
             <label for="recipient-name" className="col-form-label">Image Url:</label>
-            <input type="text" className="form-control" id="imgUrl" name="imgUrl23" onChange={handleInputChange}/>
+            <input type="text" className="form-control" id="imgUrl" name="imgUrl" onChange={handleInputChange}/>
           </div>
           <div className="mb-3">
             <label for="message-text" className="description">description:</label>
-            <textarea className="form-control" id="message-text"  onChange={handleInputChange}></textarea>
+            <textarea className="form-control" id="message-text" name="description" onChange={handleInputChange}></textarea>
           </div>
         </form>
       </div>
@@ -74,4 +73,3 @@ export default function AddNewCar(props) {
     </>
   )
 }
-

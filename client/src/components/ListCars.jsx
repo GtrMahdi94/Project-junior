@@ -11,13 +11,14 @@ const ListCar = (props) => (
           <p className="card-text text-center">{props.car.description}</p>
         </div>
         <ul className="list-group list-group-flush">
-          <li className="list-group-item d-flex justify-content-between"><strong>Price:</strong> {props.car.price}</li>
+          <li className="list-group-item d-flex justify-content-between"><strong>Price:</strong> {props.car.price} DT</li>
           <li className="list-group-item d-flex justify-content-between"><strong>Kilometres:</strong> {props.car.kilometre}</li>
           <li className="list-group-item d-flex justify-content-between"><strong>Year:</strong> {moment(props.car.year).format('DD/MM/YYYY')}</li>
         </ul>
         <div className="card-footer bg-transparent border-top-0 d-flex justify-content-between align-items-center" style={styles.cardFooter}>
           <a href="#" className="card-link">More Details</a>
           <a href="#" className="card-link">{props.car.contact}</a>
+          <button type="button" class="btn btn-outline-danger" onClick={()=>deleteCar()}>Delete</button>
         </div>
       </div>
     </div>
