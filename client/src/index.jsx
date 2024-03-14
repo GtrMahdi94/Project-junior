@@ -16,7 +16,9 @@ const App = () => {
 /// view  
   const fetch = () => {
     const cars = axios.get("http://localhost:3000/api/cars/getAll")
-    .then((data)=>setCars(data.data))
+    .then((data)=>{
+      const data1=data.data.reverse()
+      setCars(data1)})
 
     .catch((error)=>console.log(error) )
   }
@@ -30,11 +32,10 @@ const App = () => {
   //// search \\\\
   const searchcar = (body) => {
     console.log("searchcar", body);
-    axios
-      .post("http://localhost:3000/api/cars/search", body)
-      .then((data) => {
-        setUpdater(!updater);
-        console.log(data.data);
+    axios.get(`http://localhost:3000/api/cars/search/${body}`)
+      .then((data) => { 
+        setCars(data.data)
+        // console.log(data.data);
       })
       .catch((err) => {
         console.log(err);
@@ -48,7 +49,7 @@ const App = () => {
 
   const deletecar = (id) => {
     axios.delete(`http://localhost:3000/api/cars/delete${id}`)
-      .then((data) => {setUpdater(!updater)})
+      .then((data) => {setUpdater(!updater)} )
       .catch((err) => {
         console.log(err);
       });
@@ -74,11 +75,11 @@ const App = () => {
 
   return (
     <div className="bg-dark">
-      {/* <ListCars deletecar={deletecar}/> */}
-      <SearchCar searchcar={searchcar}/>
+      <SearchCar searchcar={searchcar} fetch={fetch} />
       <AddNewCar addNewCar={addNewCar}/>
       <h1> Cars Ready For Sell </h1>
       <List cars={cars}  deletecar={deletecar} />
+
     </div>
   )
 }

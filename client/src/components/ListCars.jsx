@@ -3,7 +3,7 @@ import moment from 'moment';
 
 const ListCar = (props) => (
   <div className="row justify-content-center">
-    <div className="col-md-6 mb-3">
+    <div className="col-md-6 mb-4">
       <div className="card" style={styles.card}>
         <img src={props.car.imgUrl} className="card-img-top" alt="Car" style={styles.cardImg} />
         <div className="card-body">
@@ -35,7 +35,7 @@ const styles = {
   cardImg: {
     borderTopLeftRadius: '8px',
     borderTopRightRadius: '8px',
-    height: '200px',
+    height: '300px',
     objectFit: 'cover',
   },
   cardFooter: {

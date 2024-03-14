@@ -29,14 +29,14 @@ export default function AddNewCar(props) {
     <>
    
     
-<button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Add New Car</button>
+<button type="button" className="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"  margin-right="10px" >Add New Car</button>
 
 <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog">
     <div className="modal-content">
       <div className="modal-header">
-        <h5 className="modal-title" id="exampleModalLabel">New message</h5>
-        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 className="modal-title" id="exampleModalLabel">New Car</h5>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
       </div>
       <div className="modal-body">
         <form>
@@ -73,3 +73,5 @@ export default function AddNewCar(props) {
     </>
   )
 }
+
+

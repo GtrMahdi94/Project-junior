@@ -22,8 +22,8 @@ add : async function (req, res) {
 
  search : async function (req, res) {
     try {
-      const cars = await Car.find({type:req.body.type});
-      res.status(200).send(cars);
+      const cars = await Car.find({type:req.params.name});
+      res.status(200).json(cars);
     } 
     catch (error) {
       res.status(400).send(error);
